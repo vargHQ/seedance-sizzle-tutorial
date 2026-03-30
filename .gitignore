@@ -1,0 +1,6 @@
+node_modules/
+out/
+public/clips/*.mp4
+.env
+bun.lock
+bun.lockb
