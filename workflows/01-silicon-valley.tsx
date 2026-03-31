@@ -11,9 +11,9 @@
  *               @image5=Jian-Yang, @image6=Hacker Hostel
  *
  * Model: seedance-2-preview | Duration: 15s | Aspect: 16:9
- * Run: bun run sdk/src/cli/index.ts render clients/silicon-valley/workflow.tsx --verbose
+ * Run: bunx vargai render workflows/01-silicon-valley.tsx --verbose
  */
-import { Render, Clip, Image, Video, Captions } from "vargai/react";
+import { Render, Clip, Image, Video } from "vargai/react";
 import { createVarg } from "vargai/ai";
 
 const varg = createVarg({ apiKey: process.env.VARG_API_KEY! });
@@ -139,6 +139,5 @@ Style: Classic comic book throughout. Bold outlines, halftone shading, vivid pri
 export default (
   <Render width={1920} height={1080} fps={30}>
     <Clip duration={15}>{video}</Clip>
-    <Captions srt="clients/silicon-valley/captions.srt" style="tiktok" position="bottom" />
   </Render>
 );
