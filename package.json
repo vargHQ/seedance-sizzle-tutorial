@@ -1,7 +1,30 @@
 {
   "name": "seedance-sizzle-reel",
   "version": "1.0.0",
-  "description": "Seedance 2.0 Sizzle Reel — Remotion composition with animated titles",
+  "description": "Tutorial: Build a cinematic sizzle reel with Seedance 2.0 AI video generation and Remotion. Text-to-video and image-to-video via varg API.",
+  "keywords": [
+    "seedance",
+    "ai-video",
+    "video-generation",
+    "remotion",
+    "tutorial",
+    "text-to-video",
+    "image-to-video",
+    "sizzle-reel",
+    "varg",
+    "bytedance",
+    "ai-tools",
+    "video-editing",
+    "typescript",
+    "react"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vargHQ/seedance-sizzle-tutorial.git"
+  },
+  "homepage": "https://varg.ai",
+  "license": "MIT",
+  "author": "varg.ai <hello@varg.ai> (https://varg.ai)",
   "scripts": {
     "start": "remotion studio",
     "build": "remotion render src/index.ts SizzleReel out/seedance-sizzle-reel.mp4",
