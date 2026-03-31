@@ -56,7 +56,7 @@ export const IntroCard: React.FC = () => {
     >
       <div
         style={{
-          fontFamily: "Aeonik, sans-serif",
+          fontFamily: "Outfit, sans-serif",
           fontWeight: 900,
           fontSize: 90,
           color: "#ff6b00",
@@ -84,7 +84,7 @@ export const IntroCard: React.FC = () => {
 
       <div
         style={{
-          fontFamily: "Aeonik, sans-serif",
+          fontFamily: "Outfit, sans-serif",
           fontWeight: 400,
           fontSize: 36,
           color: "#ffffff",

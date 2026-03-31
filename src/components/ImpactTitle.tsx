@@ -71,7 +71,7 @@ export const ImpactTitle: React.FC<{
 
       <div
         style={{
-          fontFamily: "Aeonik, sans-serif",
+          fontFamily: "Outfit, sans-serif",
           fontWeight: 900,
           fontSize: autoSize,
           color: "#ff6b00",

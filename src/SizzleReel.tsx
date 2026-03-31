@@ -19,8 +19,8 @@ import { EndCard } from "./components/EndCard";
 // ── Font face ──────────────────────────────────────────────────────────
 const fontFace = `
 @font-face {
-  font-family: 'Aeonik';
-  src: url('${staticFile("fonts/aeonik-black.otf")}') format('opentype');
+  font-family: 'Outfit';
+  src: url('${staticFile("fonts/outfit-black.ttf")}') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
@@ -121,7 +121,7 @@ const HookSubtitles: React.FC = () => {
       />
       <div
         style={{
-          fontFamily: "Aeonik, sans-serif",
+          fontFamily: "Outfit, sans-serif",
           fontWeight: 900,
           fontSize,
           color,

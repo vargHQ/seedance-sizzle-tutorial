@@ -11,7 +11,7 @@ import {
 /**
  * Rapid-fire text card for the hook sequence.
  * Big bold text slams in with spring scale, holds, then cuts.
- * Black background, orange text, Aeonik Black.
+ * Black background, orange text, Outfit Black.
  */
 export const HookCard: React.FC<{
   text: string;
@@ -52,7 +52,7 @@ export const HookCard: React.FC<{
     >
       <div
         style={{
-          fontFamily: "Aeonik, sans-serif",
+          fontFamily: "Outfit, sans-serif",
           fontWeight: 900,
           fontSize: text.length > 20 ? 72 : text.length > 12 ? 88 : 110,
           color,
