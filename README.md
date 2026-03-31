@@ -1,6 +1,11 @@
-# Seedance 2.0 Sizzle Reel Tutorial
+# Seedance 2.0 Sizzle Reel — AI Video Generation Tutorial with Remotion
 
-Build a cinematic sizzle reel that showcases AI video generation capabilities — from raw Seedance 2.0 clips to a polished Remotion composition with animated text overlays, transitions, and branded typography.
+<p align="center">
+  <a href="https://github.com/vargHQ/seedance-sizzle-tutorial/stargazers"><img src="https://img.shields.io/github/stars/vargHQ/seedance-sizzle-tutorial" alt="GitHub stars"></a>
+  <a href="https://github.com/vargHQ/seedance-sizzle-tutorial/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License"></a>
+</p>
+
+Build a cinematic sizzle reel using **Seedance 2.0** AI video generation and **Remotion** — from text/image prompts to a polished video composition with animated text overlays, transitions, and branded typography. All clips generated via the [varg API](https://varg.ai).
 
 **Final result**: A 48-second showcase video with:
 - Rapid-fire hook sequence over a Seedance clip
