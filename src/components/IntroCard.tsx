@@ -48,7 +48,7 @@ export const IntroCard: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "rgba(0, 0, 0, 0.55)",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",

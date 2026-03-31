@@ -149,13 +149,15 @@ const BlurBgClip: React.FC<{
   src: string;
   startFrom: number;
   title?: string;
-}> = ({ src, startFrom, title }) => {
+  volume?: number;
+}> = ({ src, startFrom, title, volume = 1 }) => {
   return (
     <AbsoluteFill style={{ backgroundColor: "#000" }}>
-      {/* Blurred background layer — stretched to fill */}
+      {/* Blurred background layer — stretched to fill, muted */}
       <OffthreadVideo
         src={src}
         startFrom={startFrom}
+        volume={0}
         style={{
           position: "absolute",
           width: "100%",
@@ -165,10 +167,11 @@ const BlurBgClip: React.FC<{
           transform: "scale(1.2)",
         }}
       />
-      {/* Sharp foreground — contained at center */}
+      {/* Sharp foreground — contained at center, with volume control */}
       <OffthreadVideo
         src={src}
         startFrom={startFrom}
+        volume={volume}
         style={{
           position: "absolute",
           width: "100%",
@@ -231,31 +234,39 @@ export const SizzleReel: React.FC = () => {
           </AbsoluteFill>
         </TransitionSeries.Sequence>
 
-        {/* ═══ PART 2: INTRO CARD (1.5s) ═══ */}
+        {/* ═══ PART 2: INTRO — "Meet Seedance 2.0 API" over Ronin Storm ═══ */}
         <TransitionSeries.Transition
           presentation={fade()}
           timing={medFade}
         />
-        <TransitionSeries.Sequence durationInFrames={Math.round(fps * 1.5)}>
-          <IntroCard />
+        <TransitionSeries.Sequence durationInFrames={Math.round(fps * 2.5)}>
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={CLIPS.ronin}
+              startFrom={0}
+              volume={0.3}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+            <IntroCard />
+          </AbsoluteFill>
         </TransitionSeries.Sequence>
 
-        {/* ═══ PART 3: FEATURE SHOWCASE ═══ */}
-
-        {/* Ronin Storm — "TOO CINEMATIC" (4s) */}
+        {/* Ronin Storm continues — "HOLLYWOOD LEVEL VIDEOS" */}
         <TransitionSeries.Transition
           presentation={fade()}
-          timing={medFade}
+          timing={shortFade}
         />
         <TransitionSeries.Sequence durationInFrames={fps * 4}>
           <WideClip
             src={CLIPS.ronin}
-            startFrom={fps * 3}
+            startFrom={Math.round(fps * 2.5)}
             title="HOLLYWOOD LEVEL VIDEOS"
           />
         </TransitionSeries.Sequence>
 
-        {/* AG1 — "GREAT FOR E-COMMERCE" (4.5s) — 9:16 with blur bg */}
+        {/* ═══ PART 3: FEATURE SHOWCASE ═══ */}
+
+        {/* AG1 — "GREAT FOR E-COMMERCE" (4.5s) — 9:16 with blur bg, 50% audio */}
         <TransitionSeries.Transition
           presentation={fade()}
           timing={shortFade}
@@ -265,10 +276,11 @@ export const SizzleReel: React.FC = () => {
             src={CLIPS.ag1}
             startFrom={0}
             title="GREAT FOR E-COMMERCE"
+            volume={0.5}
           />
         </TransitionSeries.Sequence>
 
-        {/* Planner — "UGC" (2s) — 9:16 with blur bg */}
+        {/* Planner — "UGC" (2s) — 9:16 with blur bg, 50% audio */}
         <TransitionSeries.Transition
           presentation={fade()}
           timing={shortFade}
@@ -278,15 +290,16 @@ export const SizzleReel: React.FC = () => {
             src={CLIPS.planner}
             startFrom={fps * 2}
             title="UGC"
+            volume={0.5}
           />
         </TransitionSeries.Sequence>
 
-        {/* Ramble — flash cut (0.5s) — 9:16 with blur bg */}
+        {/* Ramble — flash cut (0.5s) with B-ROLLS title — 9:16 with blur bg, 50% audio */}
         <TransitionSeries.Sequence durationInFrames={15}>
-          <BlurBgClip src={CLIPS.ramble} startFrom={0} />
+          <BlurBgClip src={CLIPS.ramble} startFrom={0} title="B-ROLLS" volume={0.5} />
         </TransitionSeries.Sequence>
 
-        {/* Ramble — "B-ROLLS" (2s) — 9:16 with blur bg */}
+        {/* Ramble — continues B-ROLLS (2s) — 9:16 with blur bg, 50% audio */}
         <TransitionSeries.Transition
           presentation={fade()}
           timing={shortFade}
@@ -296,6 +309,7 @@ export const SizzleReel: React.FC = () => {
             src={CLIPS.ramble}
             startFrom={fps * 11}
             title="B-ROLLS"
+            volume={0.5}
           />
         </TransitionSeries.Sequence>
 
@@ -347,13 +361,21 @@ export const SizzleReel: React.FC = () => {
           />
         </TransitionSeries.Sequence>
 
-        {/* ═══ PART 4: END CARD (3s) ═══ */}
+        {/* ═══ PART 4: END CARD over Hyperspeed (3s) ═══ */}
         <TransitionSeries.Transition
           presentation={fade()}
           timing={linearTiming({ durationInFrames: 15 })}
         />
         <TransitionSeries.Sequence durationInFrames={fps * 3}>
-          <EndCard />
+          <AbsoluteFill>
+            <OffthreadVideo
+              src={CLIPS.hyperspeed}
+              startFrom={fps * 10}
+              volume={0.3}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+            <EndCard />
+          </AbsoluteFill>
         </TransitionSeries.Sequence>
       </TransitionSeries>
     </>

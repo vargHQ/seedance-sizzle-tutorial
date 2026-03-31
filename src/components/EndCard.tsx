@@ -42,7 +42,7 @@ export const EndCard: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: "#0a0a0a",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
